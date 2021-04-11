@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".view.home.PromoFragment">
+
+    <TextView
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:text="Promotion Product for You...!"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/mint_high"
+        android:background="@color/sunflower_low"
+        android:gravity="center"
+        android:padding="5dp"
+        android:textSize="20sp"
+        android:textStyle="italic" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/listPromo"
+        android:layout_below="@id/header"
+        tools:listitem="@layout/item_home"
+        android:layout_marginTop="10dp"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:spanCount="2"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"/>
+
+    <ProgressBar
+        android:id="@+id/progressPromo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_centerInParent="true" />
+
+</RelativeLayout>

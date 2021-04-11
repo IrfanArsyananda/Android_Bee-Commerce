@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.irfanarsya.beecommerce.view.home.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" />
+    <fragment
+        android:id="@+id/categoryFragment"
+        android:name="com.irfanarsya.beecommerce.view.home.CategoryFragment"
+        android:label="fragment_category"
+        tools:layout="@layout/fragment_category" />
+    <fragment
+        android:id="@+id/cartFragment"
+        android:name="com.irfanarsya.beecommerce.view.home.CartFragment"
+        android:label="fragment_cart"
+        tools:layout="@layout/fragment_cart" />
+    <fragment
+        android:id="@+id/profilFragment"
+        android:name="com.irfanarsya.beecommerce.view.home.ProfilFragment"
+        android:label="fragment_profil"
+        tools:layout="@layout/fragment_profil" >
+        <action
+            android:id="@+id/action_profilFragment_to_shippingFragment"
+            app:destination="@id/shippingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/promoFragment"
+        android:name="com.irfanarsya.beecommerce.view.home.PromoFragment"
+        android:label="fragment_promo"
+        tools:layout="@layout/fragment_promo" />
+    <fragment
+        android:id="@+id/shippingFragment"
+        android:name="com.irfanarsya.beecommerce.view.shipping.ShippingFragment"
+        android:label="fragment_shipping"
+        tools:layout="@layout/fragment_shipping" />
+</navigation>

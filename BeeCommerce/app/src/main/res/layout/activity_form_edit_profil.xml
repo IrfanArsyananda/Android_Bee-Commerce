@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.editProfil.FormEditProfil">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="40dp"
+            android:paddingRight="40dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:paddingLeft="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Email"
+                android:textColor="@color/sunflower_dark"
+                android:textSize="19sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_button2"
+                android:textColor="@color/red_dark"
+                android:padding="10dp"
+                android:editable="false"
+                android:hint="Masukkan email anda" />
+
+            <TextView
+                android:paddingLeft="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="*email tidak dapat diubah"
+                android:layout_marginBottom="15dp"
+                android:textColor="@color/red_dark"
+                android:textSize="12sp"
+                android:textStyle="italic" />
+
+            <TextView
+                android:paddingLeft="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nama Depan"
+                android:textColor="@color/sunflower_dark"
+                android:textSize="19sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etNamaDepan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/bg_button2"
+                android:textColor="@color/black"
+                android:padding="10dp"
+                android:hint="Masukkan nama depan anda"/>
+
+            <TextView
+                android:paddingLeft="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nama Belakang"
+                android:textColor="@color/sunflower_dark"
+                android:textSize="19sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etNamaBelakang"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/bg_button2"
+                android:textColor="@color/black"
+                android:padding="10dp"
+                android:hint="Masukkan nama belakang anda"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp">
+
+            <Button
+                android:id="@+id/btnUbah"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:backgroundTint="#8BC34A"
+                android:layout_weight="1"
+                android:layout_marginRight="10dp"
+                android:text="UPDATE"/>
+
+            <Button
+                android:id="@+id/btnBatal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:backgroundTint="#E10F56"
+                android:layout_weight="1"
+                android:layout_marginLeft="10dp"
+                android:text="BATAL"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progressEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+
+</RelativeLayout>

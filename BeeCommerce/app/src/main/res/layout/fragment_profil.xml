@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".view.home.ProfilFragment">
+
+    <Button
+        android:id="@+id/btnEditFoto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:textColor="@color/red_dark"
+        android:backgroundTint="@color/grey"
+        android:background="@drawable/bg_button2"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="10dp"
+        android:text="Edit Foto"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:paddingBottom="10dp"
+        android:layout_gravity="center"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="40dp"
+            app:cardCornerRadius="100dp"
+            android:padding="10dp"
+            android:layout_gravity="center">
+
+            <ImageView
+                android:id="@+id/imageProfile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="centerCrop"
+                android:src="@drawable/user"/>
+
+        </androidx.cardview.widget.CardView>
+
+        <Button
+            android:id="@+id/btnEditProfile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:textSize="19sp"
+            android:textStyle="bold"
+            android:backgroundTint="@color/sunflower_low"
+            android:padding="10dp"
+            android:background="@drawable/bg_button2"
+            android:text="Edit Profile"/>
+
+        <Button
+            android:id="@+id/btnHistory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:textSize="19sp"
+            android:textStyle="bold"
+            android:backgroundTint="@color/sunflower_low"
+            android:padding="10dp"
+            android:background="@drawable/bg_button2"
+            android:text="History Order"/>
+
+        <Button
+            android:id="@+id/btnShipping"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:textSize="19sp"
+            android:textStyle="bold"
+            android:backgroundTint="@color/sunflower_low"
+            android:padding="10dp"
+            android:background="@drawable/bg_button2"
+            android:text="Shipping Address"/>
+
+        <Button
+            android:id="@+id/btnHistorySearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:textSize="19sp"
+            android:textStyle="bold"
+            android:backgroundTint="@color/sunflower_low"
+            android:padding="10dp"
+            android:background="@drawable/bg_button2"
+            android:text="History Search"/>
+
+        <Button
+            android:id="@+id/btnLogOut"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:textSize="19sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/red_dark"
+            android:layout_gravity="center"
+            android:padding="5dp"
+            android:background="@drawable/bg_button2"
+            android:text="LOG OUT"/>
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+        android:id="@+id/progressProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_centerInParent="true" />
+    
+</RelativeLayout>

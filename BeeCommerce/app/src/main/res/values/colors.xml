@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="sunflower_vlow">#FFE4AB</color>
+    <color name="sunflower_low">#FCD277</color>
+    <color name="sunflower_med">#FECD57</color>
+    <color name="sunflower_high">#F5BA45</color>
+    <color name="sunflower_dark">#C68D1C</color>
+    <color name="mint_low">#62DDBD</color>
+    <color name="mint_med">#46CEAD</color>
+    <color name="mint_high">#35BB9B</color>
+    <color name="black">#FF000000</color>
+    <color name="grey">#CBD0D8</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="red_dark">#DF0F00</color>
+</resources>
