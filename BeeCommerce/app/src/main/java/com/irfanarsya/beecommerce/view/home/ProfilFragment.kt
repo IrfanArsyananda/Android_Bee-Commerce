@@ -20,9 +20,7 @@ import com.irfanarsya.beecommerce.helper.SessionManager
 import com.irfanarsya.beecommerce.model.ResponseGetProfile
 import com.irfanarsya.beecommerce.network.Constant
 import com.irfanarsya.beecommerce.view.LoginActivity
-import com.irfanarsya.beecommerce.view.detailProduct.DetailActivity
 import com.irfanarsya.beecommerce.view.editProfil.EditFotoActivity
-import com.irfanarsya.beecommerce.view.editProfil.FormEditProfil
 import com.irfanarsya.beecommerce.viewModel.ViewModelProfile
 import kotlinx.android.synthetic.main.fragment_profil.*
 
@@ -69,12 +67,19 @@ class ProfilFragment : Fragment() {
         }
 
         btnEditProfile.setOnClickListener {
-            val intent = Intent(context, FormEditProfil::class.java)
-            intent.putExtra("uId", userId)
-            intent.putExtra("fName", fName)
-            intent.putExtra("lName", lName)
-            intent.putExtra("email", email)
-            context?.startActivity(intent)
+//            val intent = Intent(context, FormEditProfil::class.java)
+//            intent.putExtra("uId", userId)
+//            intent.putExtra("fName", fName)
+//            intent.putExtra("lName", lName)
+//            intent.putExtra("email", email)
+//            context?.startActivity(intent)
+            val bundle = bundleOf(
+                "uId" to userId,
+                "fName" to fName,
+                "lName" to lName,
+                "email" to email,
+            )
+            navController.navigate(R.id.action_profilFragment_to_editProfilFragment, bundle)
         }
 
         btnHistory.setOnClickListener {
@@ -90,6 +95,13 @@ class ProfilFragment : Fragment() {
             )
             navController.navigate(R.id.action_profilFragment_to_shippingFragment, bundle)
 
+        }
+
+        btnHistorySearch.setOnClickListener {
+            val bundle = bundleOf(
+                "uid" to userId
+            )
+            navController.navigate(R.id.action_profilFragment_to_historySearchFragment, bundle)
         }
 
         btnLogOut.setOnClickListener {
@@ -143,6 +155,10 @@ class ProfilFragment : Fragment() {
         lName = it?.datas?.get(0)?.lastName
         userId = it?.datas?.get(0)?.id.toString()
         urlFoto = it?.datas?.get(0)?.photo
+
+        tvUserId.setText("User ID : $userId")
+        tvEmail.setText("Email : $email")
+        tvNama.setText("Nama : $fName $lName")
 
         val name = it?.datas?.get(0)?.photo
         val urlEnd = Constant.BASE_IMG_USER + "$name"

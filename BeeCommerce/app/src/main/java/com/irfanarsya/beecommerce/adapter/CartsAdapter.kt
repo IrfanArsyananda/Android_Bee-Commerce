@@ -39,8 +39,11 @@ class CartsAdapter(val data: List<DataItemC>?, val itemClick: OnClickListener): 
         val urlEnd = Constant.BASE_IMG_PRO+"$url"
         Glide.with(holder.itemView.context).load(urlEnd).into(holder.img)
 
-        holder.itemView.setOnClickListener {
+        holder.img.setOnClickListener {
             itemClick.detail(item)
+        }
+        holder.itemView.setOnClickListener {
+            itemClick.update(item)
         }
         holder.delete.setOnClickListener {
             itemClick.delete(item)
@@ -54,6 +57,7 @@ class CartsAdapter(val data: List<DataItemC>?, val itemClick: OnClickListener): 
 
     interface OnClickListener {
         fun detail(item: DataItemC?)
+        fun update(item: DataItemC?)
         fun delete(item: DataItemC?)
     }
 }

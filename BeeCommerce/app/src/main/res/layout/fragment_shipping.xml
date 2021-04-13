@@ -6,8 +6,23 @@
     android:layout_height="match_parent"
     tools:context=".view.shipping.ShippingFragment">
 
+    <TextView
+        android:id="@+id/header1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@color/sunflower_low"
+        android:gravity="center"
+        android:padding="5dp"
+        android:paddingLeft="10dp"
+        android:text="My Address"
+        android:textColor="@color/mint_high"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
     <LinearLayout
         android:id="@+id/header"
+        android:layout_below="@id/header1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"

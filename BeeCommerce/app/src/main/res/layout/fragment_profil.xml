@@ -1,131 +1,326 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".view.home.ProfilFragment">
 
-<!--    <Button-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:textSize="14sp"-->
-<!--        android:textColor="@color/red_dark"-->
-<!--        android:backgroundTint="@color/grey"-->
-<!--        android:background="@drawable/bg_button2"-->
-<!--        android:layout_alignParentTop="true"-->
-<!--        android:layout_alignParentRight="true"-->
-<!--        android:layout_margin="10dp"-->
-<!--        android:text="Edit Foto"/>-->
-
-    <LinearLayout
+    <TextView
+        android:id="@+id/header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@color/sunflower_low"
+        android:gravity="center"
+        android:padding="5dp"
+        android:paddingLeft="10dp"
+        android:text="My Profile"
+        android:textColor="@color/mint_high"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <!--    <Button-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:textSize="14sp"-->
+    <!--        android:textColor="@color/red_dark"-->
+    <!--        android:backgroundTint="@color/grey"-->
+    <!--        android:background="@drawable/bg_button2"-->
+    <!--        android:layout_alignParentTop="true"-->
+    <!--        android:layout_alignParentRight="true"-->
+    <!--        android:layout_margin="10dp"-->
+    <!--        android:text="Edit Foto"/>-->
+
+    <LinearLayout
+        android:id="@+id/LLProfileInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/header"
+        android:layout_gravity="center"
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
-        android:paddingBottom="10dp"
-        android:layout_gravity="center"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingBottom="10dp">
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/btnEditFoto"
-            android:layout_width="140dp"
-            android:layout_height="140dp"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            app:cardCornerRadius="100dp"
-            android:padding="10dp"
-            android:layout_gravity="center">
+            android:orientation="horizontal">
 
-            <ImageView
-                android:id="@+id/imageProfile"
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btnEditFoto"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:padding="10dp"
+                app:cardCornerRadius="50dp">
+
+                <ImageView
+                    android:id="@+id/imageProfile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/user" />
+
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:scaleType="centerCrop"
-                android:src="@drawable/user"/>
+                android:layout_height="match_parent"
+                android:layout_marginLeft="15dp"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
 
-        </androidx.cardview.widget.CardView>
+                <TextView
+                    android:id="@+id/tvUserId"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="User ID"
+                    android:textColor="@color/sunflower_dark"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Email"
+                    android:textColor="@color/sunflower_dark"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvNama"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Nama"
+                    android:textColor="@color/sunflower_dark"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        </LinearLayout>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textStyle="italic"
-            android:textSize="12sp"
-            android:textColor="@color/red_dark"
             android:layout_marginBottom="40dp"
-            android:gravity="center"
-            android:text="*klik foto untuk edit"/>
+            android:text="*Klik foto untuk edit"
+            android:textColor="@color/red_dark"
+            android:textSize="12sp"
+            android:textStyle="italic" />
 
-        <Button
+        <!--        <Button-->
+        <!--            android:id="@+id/btnEditProfile"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginBottom="10dp"-->
+        <!--            android:textSize="19sp"-->
+        <!--            android:textStyle="bold"-->
+        <!--            android:backgroundTint="@color/sunflower_low"-->
+        <!--            android:padding="10dp"-->
+        <!--            android:background="@drawable/bg_button2"-->
+        <!--            android:text="Edit Profile"/>-->
+
+        <!--        <Button-->
+        <!--            android:id="@+id/btnHistory"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginBottom="10dp"-->
+        <!--            android:textSize="19sp"-->
+        <!--            android:textStyle="bold"-->
+        <!--            android:backgroundTint="@color/sunflower_low"-->
+        <!--            android:padding="10dp"-->
+        <!--            android:background="@drawable/bg_button2"-->
+        <!--            android:text="History Order"/>-->
+
+        <!--        <Button-->
+        <!--            android:id="@+id/btnShipping"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginBottom="10dp"-->
+        <!--            android:textSize="19sp"-->
+        <!--            android:textStyle="bold"-->
+        <!--            android:backgroundTint="@color/sunflower_low"-->
+        <!--            android:padding="10dp"-->
+        <!--            android:background="@drawable/bg_button2"-->
+        <!--            android:text="Shipping Address"/>-->
+
+        <!--        <Button-->
+        <!--            android:id="@+id/btnHistorySearch"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginBottom="10dp"-->
+        <!--            android:textSize="19sp"-->
+        <!--            android:textStyle="bold"-->
+        <!--            android:backgroundTint="@color/sunflower_low"-->
+        <!--            android:padding="10dp"-->
+        <!--            android:background="@drawable/bg_button2"-->
+        <!--            android:text="History Search"/>-->
+
+        <!--        <Button-->
+        <!--            android:id="@+id/btnLogOut"-->
+        <!--            android:layout_width="150dp"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginBottom="10dp"-->
+        <!--            android:textSize="19sp"-->
+        <!--            android:textStyle="bold"-->
+        <!--            android:textColor="@color/white"-->
+        <!--            android:backgroundTint="@color/red_dark"-->
+        <!--            android:layout_gravity="center"-->
+        <!--            android:padding="5dp"-->
+        <!--            android:background="@drawable/bg_button2"-->
+        <!--            android:text="LOG OUT"/>-->
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/LLProfileInfo">
+
+
+        <androidx.cardview.widget.CardView
             android:id="@+id/btnEditProfile"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:textSize="19sp"
-            android:textStyle="bold"
-            android:backgroundTint="@color/sunflower_low"
-            android:padding="10dp"
-            android:background="@drawable/bg_button2"
-            android:text="Edit Profile"/>
+            android:layout_marginBottom="1dp"
+            android:layout_height="50dp">
 
-        <Button
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="40dp"
+                android:text="Edit Profile"
+                android:gravity="center_vertical"
+                android:textColor="@color/sunflower_high"
+                android:textSize="21sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="right"
+                android:layout_marginRight="30dp"
+                android:src="@drawable/ic_next"/>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
             android:id="@+id/btnHistory"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:textSize="19sp"
-            android:textStyle="bold"
-            android:backgroundTint="@color/sunflower_low"
-            android:padding="10dp"
-            android:background="@drawable/bg_button2"
-            android:text="History Order"/>
+            android:layout_marginBottom="1dp"
+            android:layout_height="50dp">
 
-        <Button
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="40dp"
+                android:text="History Orders"
+                android:gravity="center_vertical"
+                android:textColor="@color/sunflower_high"
+                android:textSize="21sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="right"
+                android:layout_marginRight="30dp"
+                android:src="@drawable/ic_next"/>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
             android:id="@+id/btnShipping"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:textSize="19sp"
-            android:textStyle="bold"
-            android:backgroundTint="@color/sunflower_low"
-            android:padding="10dp"
-            android:background="@drawable/bg_button2"
-            android:text="Shipping Address"/>
+            android:layout_marginBottom="1dp"
+            android:layout_height="50dp">
 
-        <Button
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="40dp"
+                android:text="Shipping Address"
+                android:gravity="center_vertical"
+                android:textColor="@color/sunflower_high"
+                android:textSize="21sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="right"
+                android:layout_marginRight="30dp"
+                android:src="@drawable/ic_next"/>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
             android:id="@+id/btnHistorySearch"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:textSize="19sp"
-            android:textStyle="bold"
-            android:backgroundTint="@color/sunflower_low"
-            android:padding="10dp"
-            android:background="@drawable/bg_button2"
-            android:text="History Search"/>
+            android:layout_marginBottom="1dp"
+            android:layout_height="50dp">
 
-        <Button
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="40dp"
+                android:text="History Search"
+                android:gravity="center_vertical"
+                android:textColor="@color/sunflower_high"
+                android:textSize="21sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="right"
+                android:layout_marginRight="30dp"
+                android:src="@drawable/ic_next"/>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
             android:id="@+id/btnLogOut"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:textSize="19sp"
-            android:textStyle="bold"
-            android:textColor="@color/white"
-            android:backgroundTint="@color/red_dark"
-            android:layout_gravity="center"
-            android:padding="5dp"
-            android:background="@drawable/bg_button2"
-            android:text="LOG OUT"/>
+            android:layout_width="match_parent"
+            android:layout_marginBottom="1dp"
+            android:layout_height="50dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="40dp"
+                android:text="Logout"
+                android:gravity="center_vertical"
+                android:textColor="@color/red_dark"
+                android:textSize="21sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="right"
+                android:layout_marginRight="30dp"
+                android:src="@drawable/ic_next"/>
+
+        </androidx.cardview.widget.CardView>
 
     </LinearLayout>
 
     <ProgressBar
-        android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         android:id="@+id/progressProfile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:visibility="gone"
-        android:layout_centerInParent="true" />
-    
+        android:layout_centerInParent="true"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+        android:visibility="gone" />
+
 </RelativeLayout>

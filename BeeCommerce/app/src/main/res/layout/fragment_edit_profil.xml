@@ -1,13 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.editProfil.FormEditProfil">
+    tools:context=".view.editProfil.editProfilFragment">
+
+    <TextView
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@color/sunflower_low"
+        android:gravity="center"
+        android:padding="5dp"
+        android:paddingLeft="10dp"
+        android:text="Edit Profile"
+        android:textColor="@color/mint_high"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
     <LinearLayout
+        android:layout_below="@id/header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
@@ -19,6 +33,35 @@
             android:paddingLeft="40dp"
             android:paddingRight="40dp"
             android:orientation="vertical">
+
+            <TextView
+                android:paddingLeft="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="User ID"
+                android:textColor="@color/sunflower_dark"
+                android:textSize="19sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etUserId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_button2"
+                android:editable="false"
+                android:padding="10dp"
+                android:textStyle="bold"
+                android:textColor="@color/red_dark" />
+
+            <TextView
+                android:paddingLeft="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="*User ID tidak dapat diubah"
+                android:layout_marginBottom="15dp"
+                android:textColor="@color/red_dark"
+                android:textSize="12sp"
+                android:textStyle="italic" />
 
             <TextView
                 android:paddingLeft="10dp"
@@ -36,14 +79,14 @@
                 android:background="@drawable/bg_button2"
                 android:textColor="@color/red_dark"
                 android:padding="10dp"
-                android:editable="false"
-                android:hint="Masukkan email anda" />
+                android:textStyle="bold"
+                android:editable="false"/>
 
             <TextView
                 android:paddingLeft="15dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="*email tidak dapat diubah"
+                android:text="*Email tidak dapat diubah"
                 android:layout_marginBottom="15dp"
                 android:textColor="@color/red_dark"
                 android:textSize="12sp"
@@ -65,8 +108,7 @@
                 android:layout_marginBottom="15dp"
                 android:background="@drawable/bg_button2"
                 android:textColor="@color/black"
-                android:padding="10dp"
-                android:hint="Masukkan nama depan anda"/>
+                android:padding="10dp"/>
 
             <TextView
                 android:paddingLeft="10dp"
@@ -84,8 +126,7 @@
                 android:layout_marginBottom="15dp"
                 android:background="@drawable/bg_button2"
                 android:textColor="@color/black"
-                android:padding="10dp"
-                android:hint="Masukkan nama belakang anda"/>
+                android:padding="10dp"/>
 
         </LinearLayout>
 

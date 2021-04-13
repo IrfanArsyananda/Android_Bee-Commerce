@@ -25,7 +25,6 @@ import com.irfanarsya.beecommerce.view.home.MainActivity
 import com.irfanarsya.beecommerce.viewModel.ViewModelEditFoto
 import com.udacoding.samplephotousingretrofit.utils.*
 import kotlinx.android.synthetic.main.activity_edit_foto.*
-import kotlinx.android.synthetic.main.activity_form_edit_profil.*
 import java.io.IOException
 import kotlin.random.Random
 

@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingLeft="10dp"
-        android:text="Keranjang Anda"
+        android:text="My Carts"
         android:layout_marginTop="10dp"
         android:textColor="@color/mint_high"
         android:background="@color/sunflower_low"

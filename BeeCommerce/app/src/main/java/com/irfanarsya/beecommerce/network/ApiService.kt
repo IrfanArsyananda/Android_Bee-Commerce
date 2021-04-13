@@ -35,6 +35,14 @@ interface ApiService {
         @Query("pageSize") pageSize : Int
     ):Flowable<ResponseGetHome>
 
+    //getHomeProductsByKey
+    @GET("get-home-products")
+    fun getHomeProductsByKey(
+        @Query("page") page : Long,
+        @Query("pageSize") pageSize : Int,
+        @Query("q") key : String
+    ):Flowable<ResponseGetHome>
+
     //getPromo
     @GET("get-promotion-products")
     fun getPromo(
@@ -70,6 +78,15 @@ interface ApiService {
         @Field("qty") qty: Int,
     ): Single<ResponseAddToCart>
 
+    //updateCart
+    @FormUrlEncoded
+    @POST("update-cart-item-qty")
+    fun updateCart(
+        @Field("user_id") user_id: Int,
+        @Field("new_qty") new_qty: Int,
+        @Field("cart_id") cart_id: Int,
+    ): Single<ResponseEditCart>
+
     //deleteItemCart
     @FormUrlEncoded
     @POST("delete-cart-item")
@@ -101,11 +118,11 @@ interface ApiService {
     ): Single<ResponseEditFoto>
 
     //addOrder
-//    @FormUrlEncoded
-//    @POST("insert-order")
-//    fun addOrder(
-//        @Field("user_id") user_id: Int,
-//    ): Single<ResponseAddOrder>
+    @FormUrlEncoded
+    @POST("insert-order")
+    fun addOrder(
+        @Field("user_id") user_id: Int,
+    ): Single<ResponseAddOrder>
 
     //addShipping
     @FormUrlEncoded
