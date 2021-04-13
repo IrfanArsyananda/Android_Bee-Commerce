@@ -5,13 +5,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
-import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.irfanarsya.beecommerce.R
 import com.irfanarsya.beecommerce.model.action.ResponseEditProfil
 import com.irfanarsya.beecommerce.view.home.MainActivity
-import com.irfanarsya.beecommerce.view.home.ProfilFragment
 import com.irfanarsya.beecommerce.viewModel.ViewModelEditProfil
 import kotlinx.android.synthetic.main.activity_form_edit_profil.*
 import kotlinx.android.synthetic.main.activity_form_edit_profil.etEmail

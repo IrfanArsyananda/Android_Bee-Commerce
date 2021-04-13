@@ -4,14 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".view.home.CartFragment">
+    tools:context=".view.order.HistoryOrderFragment">
 
     <TextView
         android:id="@+id/header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingLeft="10dp"
-        android:text="Keranjang Anda"
+        android:text="History Orders"
         android:layout_marginTop="10dp"
         android:textColor="@color/mint_high"
         android:background="@color/sunflower_low"
@@ -21,30 +21,13 @@
         android:textStyle="bold" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/listCart"
+        android:id="@+id/listOrders"
         android:layout_below="@id/header"
-        tools:listitem="@layout/item_cart"
+        tools:listitem="@layout/item_order"
         android:layout_marginTop="10dp"
         android:padding="10dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-        android:id="@+id/btnCheckout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_margin="20dp"
-        android:src="@drawable/order"/>
-
-    <ProgressBar
-        android:id="@+id/progressCarts"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="gone"
-        android:layout_centerInParent="true" />
 
 </RelativeLayout>

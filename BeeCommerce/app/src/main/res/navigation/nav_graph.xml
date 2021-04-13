@@ -28,6 +28,9 @@
         <action
             android:id="@+id/action_profilFragment_to_shippingFragment"
             app:destination="@id/shippingFragment" />
+        <action
+            android:id="@+id/action_profilFragment_to_historyOrderFragment"
+            app:destination="@id/historyOrderFragment" />
     </fragment>
     <fragment
         android:id="@+id/promoFragment"
@@ -39,4 +42,9 @@
         android:name="com.irfanarsya.beecommerce.view.shipping.ShippingFragment"
         android:label="fragment_shipping"
         tools:layout="@layout/fragment_shipping" />
+    <fragment
+        android:id="@+id/historyOrderFragment"
+        android:name="com.irfanarsya.beecommerce.view.order.HistoryOrderFragment"
+        android:label="fragment_history_order"
+        tools:layout="@layout/fragment_history_order" />
 </navigation>

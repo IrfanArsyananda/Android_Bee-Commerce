@@ -17,8 +17,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BeeCommerce"
         android:usesCleartextTraffic="true">
-        <activity android:name=".view.editProfil.EditFotoActivity"
-            android:label="Edit Foto Profil"></activity>
+        <activity
+            android:name=".view.shipping.FormShippingActivity"
+            android:label="Form Shipping">
+        </activity>
+        <activity
+            android:name=".view.editProfil.EditFotoActivity"
+            android:label="Edit Foto Profil" />
         <activity
             android:name=".view.editProfil.FormEditProfil"
             android:label="Edit Profil" />

@@ -36,14 +36,14 @@
 
     </LinearLayout>
 
-    <ImageButton
-        android:id="@+id/btnEditShipping"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_gravity="right"
-        android:layout_marginRight="10dp"
-        android:scaleType="centerInside"
-        android:backgroundTint="#00FFFFFF"
-        android:src="@drawable/edit"/>
+    <TextView
+        android:id="@+id/statUtama"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_margin="10dp"
+        android:gravity="center_vertical"
+        android:visibility="gone"
+        android:text="utama"/>
 
 </androidx.cardview.widget.CardView>

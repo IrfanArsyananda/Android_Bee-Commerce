@@ -13,7 +13,7 @@ class ShippingAdapter(val data: List<ShippingAddressItem>?, val itemClick: OnCli
     class ShippingHolder (itemView : View) : RecyclerView.ViewHolder(itemView) {
         val title = itemView.itemTitleShipping
         val address =  itemView.itemAlamatShip
-        val buttonEdit = itemView.btnEditShipping
+        val utama = itemView.statUtama
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ShippingHolder {
@@ -27,8 +27,11 @@ class ShippingAdapter(val data: List<ShippingAddressItem>?, val itemClick: OnCli
 
         holder.title.text = item?.title
         holder.address.text = item?.address
+        if (item?.isMainAddress == "1"){
+            holder.utama.visibility = View.VISIBLE
+        }
 
-        holder.buttonEdit.setOnClickListener {
+        holder.itemView.setOnClickListener {
             itemClick.edit(item)
         }
 

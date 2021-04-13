@@ -1,6 +1,9 @@
 package com.irfanarsya.beecommerce.repository
 
 import com.irfanarsya.beecommerce.model.ResponseDetailProduct
+import com.irfanarsya.beecommerce.model.ResponseGetCart
+import com.irfanarsya.beecommerce.model.action.ResponseAddToCart
+import com.irfanarsya.beecommerce.model.action.ResponseDeleteCartItem
 import com.irfanarsya.beecommerce.network.ConfigNetwork
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.schedulers.Schedulers
@@ -16,6 +19,40 @@ class RepositoryProducts {
                 },{
                     errorHandler(it)
                 })
+    }
+
+    fun getCarts(user_id: Int, responseHandler: (ResponseGetCart)->Unit, errorHandler: (Throwable)->Unit){
+        ConfigNetwork.getRetrofit().getCart(user_id)
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe({
+                responseHandler(it)
+            },{
+                errorHandler(it)
+            })
+    }
+
+    fun insertCarts(pro_id: Int, user_id: Int, qty: Int,
+                    responseHandler: (ResponseAddToCart)->Unit, errorHandler: (Throwable)->Unit){
+        ConfigNetwork.getRetrofit().addToCart(pro_id, user_id, qty)
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe({
+                responseHandler(it)
+            },{
+                errorHandler(it)
+            })
+    }
+
+    fun deleteCart(cart_id: Int, responseHandler: (ResponseDeleteCartItem)->Unit, errorHandler: (Throwable)->Unit){
+        ConfigNetwork.getRetrofit().deleteCart(cart_id)
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe({
+                responseHandler(it)
+            },{
+                errorHandler(it)
+            })
     }
 
 }

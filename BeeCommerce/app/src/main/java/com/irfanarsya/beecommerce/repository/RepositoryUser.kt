@@ -3,6 +3,7 @@ package com.irfanarsya.beecommerce.repository
 import com.irfanarsya.beecommerce.model.*
 import com.irfanarsya.beecommerce.model.action.ResponseEditFoto
 import com.irfanarsya.beecommerce.model.action.ResponseEditProfil
+import com.irfanarsya.beecommerce.model.action.ResponseEditShipping
 import com.irfanarsya.beecommerce.network.ConfigNetwork
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.disposables.CompositeDisposable
@@ -49,17 +50,6 @@ class RepositoryUser {
             })
     }
 
-//    fun getShipping(userId: String, responseHandler: (DatasItem)->Unit, errorHandler: (Throwable)->Unit){
-//        ConfigNetwork.getRetrofit().getShipping(userId)
-//            .subscribeOn(Schedulers.io())
-//            .observeOn(AndroidSchedulers.mainThread())
-//            .subscribe({
-//                responseHandler(it)
-//            },{
-//                errorHandler(it)
-//            })
-//    }
-
     fun editProfil(first_name: String, last_name: String, userId: String,
                    responseHandler: (ResponseEditProfil)->Unit, errorHandler: (Throwable)->Unit){
         ConfigNetwork.getRetrofit().updateProfil(first_name, last_name, userId)
@@ -82,6 +72,30 @@ class RepositoryUser {
                 errorHandler(it)
             })
         )
+    }
+
+    fun addShipping(judul: String, kota: String, prov: String, add: String, zip: String, isMain: String, u_id: String,
+                     responseHandler: (ResponseEditShipping)->Unit, errorHandler: (Throwable)->Unit){
+        ConfigNetwork.getRetrofit().addShipping(judul, kota, prov, add, zip, isMain, u_id)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe({
+                    responseHandler(it)
+                },{
+                    errorHandler(it)
+                })
+    }
+
+    fun editShipping(judul: String, kota: String, prov: String, add: String, zip: String, isMain: String, u_id: String, add_id: String,
+                   responseHandler: (ResponseEditShipping)->Unit, errorHandler: (Throwable)->Unit){
+        ConfigNetwork.getRetrofit().updateShipping(judul, kota, prov, add, zip, isMain, u_id, add_id)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe({
+                    responseHandler(it)
+                },{
+                    errorHandler(it)
+                })
     }
 
 }

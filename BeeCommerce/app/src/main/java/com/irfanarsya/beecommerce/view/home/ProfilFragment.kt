@@ -9,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.os.bundleOf
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.NavController
@@ -76,8 +77,19 @@ class ProfilFragment : Fragment() {
             context?.startActivity(intent)
         }
 
+        btnHistory.setOnClickListener {
+            val bundle = bundleOf(
+                "id" to userId
+            )
+            navController.navigate(R.id.action_profilFragment_to_historyOrderFragment, bundle)
+        }
+
         btnShipping.setOnClickListener {
-            navController.navigate(R.id.action_profilFragment_to_shippingFragment)
+            val bundle = bundleOf(
+                "id" to userId
+            )
+            navController.navigate(R.id.action_profilFragment_to_shippingFragment, bundle)
+
         }
 
         btnLogOut.setOnClickListener {
