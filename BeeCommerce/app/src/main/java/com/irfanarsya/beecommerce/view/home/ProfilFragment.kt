@@ -84,7 +84,7 @@ class ProfilFragment : Fragment() {
 
         btnHistory.setOnClickListener {
             val bundle = bundleOf(
-                "id" to userId
+                "uid" to userId
             )
             navController.navigate(R.id.action_profilFragment_to_historyOrderFragment, bundle)
         }

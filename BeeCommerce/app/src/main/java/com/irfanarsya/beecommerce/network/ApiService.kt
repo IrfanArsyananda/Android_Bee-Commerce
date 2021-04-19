@@ -36,12 +36,12 @@ interface ApiService {
     ):Flowable<ResponseGetHome>
 
     //getHomeProductsByKey
-    @GET("get-home-products")
-    fun getHomeProductsByKey(
-        @Query("page") page : Long,
-        @Query("pageSize") pageSize : Int,
-        @Query("q") key : String
-    ):Flowable<ResponseGetHome>
+//    @GET("get-home-products")
+//    fun getHomeProductsByKey(
+//        @Query("page") page : Long,
+//        @Query("pageSize") pageSize : Int,
+//        @Query("q") key : String
+//    ):List<DataItem>
 
     //getPromo
     @GET("get-promotion-products")
@@ -123,6 +123,15 @@ interface ApiService {
     fun addOrder(
         @Field("user_id") user_id: Int,
     ): Single<ResponseAddOrder>
+
+    //getOrder
+    @FormUrlEncoded
+    @POST("get-orders")
+    fun getOrders(
+            @Field("user_id") user_id: Int,
+            @Query("page") page : Long,
+            @Query("pageSize") pageSize : Int
+    ): Flowable<ResponseGetOrders>
 
     //addShipping
     @FormUrlEncoded

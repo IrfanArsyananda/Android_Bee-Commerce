@@ -1,5 +1,6 @@
 package com.irfanarsya.beecommerce.model
 
+import androidx.recyclerview.widget.DiffUtil
 import com.google.gson.annotations.SerializedName
 
 data class ResponseGetOrders(
@@ -68,7 +69,18 @@ data class DataItemGO(
 	val shippingAddress: String? = null,
 
 	@field:SerializedName("products")
-	val products: List<ProductsItem?>? = null
+	val products: List<ProductsItem?>? = null,
+
+	var DIFF_CALLBACK: DiffUtil.ItemCallback<DataItemGO> = object  : DiffUtil.ItemCallback<DataItemGO>(){
+		override fun areItemsTheSame(oldItem: DataItemGO, newItem: DataItemGO): Boolean {
+			return oldItem.orderCode == newItem.orderCode
+		}
+
+		override fun areContentsTheSame(oldItem: DataItemGO, newItem: DataItemGO): Boolean {
+			return oldItem.equals(newItem)
+		}
+
+	}
 )
 
 data class CategoryGO(
