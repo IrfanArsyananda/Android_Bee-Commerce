@@ -17,7 +17,7 @@ class ViewModelOrders : ViewModel() {
 
     //    var ordersFactory: OrdersDataFactory? = null
 //    var userId: Int = 0
-    var ordersData : LiveData<PagedList<DataItemGO>>? = null
+//    var ordersData : LiveData<PagedList<DataItemGO>>? = null
 
     fun setOrderId(userId: Int):LiveData<PagedList<DataItemGO>> {
 

@@ -6,25 +6,25 @@ import androidx.lifecycle.ViewModel
 import androidx.paging.LivePagedListBuilder
 import androidx.paging.PagedList
 import com.irfanarsya.beecommerce.dataSource.home.HomeDataFactory
+import com.irfanarsya.beecommerce.dataSource.order.OrdersDataFactory
+import com.irfanarsya.beecommerce.dataSource.search.SearchDataFactory
 import com.irfanarsya.beecommerce.local.History
 import com.irfanarsya.beecommerce.model.DataItem
+import com.irfanarsya.beecommerce.model.DataItemGO
 import com.irfanarsya.beecommerce.repository.RepositoryLocal
 import java.util.concurrent.Executor
 import java.util.concurrent.Executors
 
 class ViewModelHome: ViewModel(){
 
-    var exucutor : Executor
+    var exucutor = Executors.newFixedThreadPool(5)
     var homeData : LiveData<PagedList<DataItem>>
 //    var searchData : LiveData<PagedList<DataItem>>
 
 
     init {
 
-        exucutor = Executors.newFixedThreadPool(5)
-
         var homeFactory = HomeDataFactory()
-//        var searchFactory = SearchDataFactory()
 
         var pageListConfig = PagedList.Config.Builder()
             .setPageSize(10)
@@ -35,21 +35,28 @@ class ViewModelHome: ViewModel(){
         homeData = LivePagedListBuilder(homeFactory,pageListConfig)
             .setFetchExecutor(exucutor)
             .build()
-
-//        searchData = LivePagedListBuilder(searchFactory,pageListConfig)
-//                .setFetchExecutor(exucutor)
-//                .build()
     }
 
     fun getHomeProduts (): LiveData<PagedList<DataItem>> {
         return homeData
     }
 
-//    fun getSearchProduts (): LiveData<PagedList<DataItem>> {
-//        val sd = SearchDataSource()
-//        sd.search("kipas")
-//        return searchData
-//    }
+    fun searchHome(key: String):LiveData<PagedList<DataItem>> {
+
+        var searchFactory = SearchDataFactory(key)
+
+        var pageListConfig = PagedList.Config.Builder()
+                .setPageSize(10)
+                .setInitialLoadSizeHint(10)
+                .setEnablePlaceholders(false)
+                .build()
+
+        var searchData : LiveData<PagedList<DataItem>> = LivePagedListBuilder(searchFactory,pageListConfig)
+                .setFetchExecutor(exucutor)
+                .build()
+
+        return  searchData
+    }
 
     val repoLocal = RepositoryLocal()
 

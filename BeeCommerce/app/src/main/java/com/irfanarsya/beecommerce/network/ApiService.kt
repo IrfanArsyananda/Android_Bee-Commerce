@@ -7,6 +7,7 @@ import io.reactivex.rxjava3.core.Single
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
 import retrofit2.http.*
+import java.util.concurrent.Flow
 
 interface ApiService {
 
@@ -36,12 +37,12 @@ interface ApiService {
     ):Flowable<ResponseGetHome>
 
     //getHomeProductsByKey
-//    @GET("get-home-products")
-//    fun getHomeProductsByKey(
-//        @Query("page") page : Long,
-//        @Query("pageSize") pageSize : Int,
-//        @Query("q") key : String
-//    ):List<DataItem>
+    @GET("get-home-products")
+    fun getHomeProductsByKey(
+        @Query("page") page : Long,
+        @Query("pageSize") pageSize : Int,
+        @Query("q") key : String
+    ):Flowable<List<DataItem>>
 
     //getPromo
     @GET("get-promotion-products")

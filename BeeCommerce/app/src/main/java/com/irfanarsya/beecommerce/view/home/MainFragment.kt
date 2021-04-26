@@ -58,7 +58,7 @@ class MainFragment : Fragment() {
             val key = etSearch.text.toString()
 //            viewModel?.getSearchProduts()
             Toast.makeText(context, key, Toast.LENGTH_SHORT).show()
-//            viewModel?.insertHistory(History(null, key,getDate()))
+            viewModel?.searchHome(key)?.observe(viewLifecycleOwner, Observer { showHomeProduts(it) })
             if (key.isNotEmpty()){
                 insert(History(null, key,getDate()))
             }
