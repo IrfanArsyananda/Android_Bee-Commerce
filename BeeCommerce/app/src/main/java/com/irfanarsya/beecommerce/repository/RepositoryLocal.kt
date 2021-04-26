@@ -1,5 +1,6 @@
 package com.irfanarsya.beecommerce.repository
 
+import android.database.DefaultDatabaseErrorHandler
 import android.os.Handler
 import android.widget.Toast
 import com.irfanarsya.beecommerce.local.DatabaseHistory
@@ -32,14 +33,16 @@ class RepositoryLocal {
 //                    Toast.makeText(context, it.message, Toast.LENGTH_SHORT).show()
 //                })
 //    }
-
-    fun showHistory(responseHandler: (List<History>?) -> Unit) {
-        Observable.fromCallable { historyDatabase?.historyDao()?.getAllHistory() }
+//private val students : ArrayList<Student> = ArrayList()
+    fun showHistory(responseHandler: (MutableList<History>) -> Unit, errorHandler: (Throwable) -> Unit) {
+        Observable.fromCallable { historyDatabase!!.historyDao().getAllHistory() }
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({
-                           responseHandler(it)
-                },{})
+                    responseHandler(it as MutableList<History>)
+                },{
+                    errorHandler(it)
+                })
     }
 
 }

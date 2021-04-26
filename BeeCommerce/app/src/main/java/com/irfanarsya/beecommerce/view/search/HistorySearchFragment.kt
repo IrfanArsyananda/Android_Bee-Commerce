@@ -31,9 +31,9 @@ class HistorySearchFragment : Fragment() {
         historyDatabase = context?.let { DatabaseHistory.getInstance(it) }
 
         attachObserve()
-//        viewModel?.showHistory()
+        viewModel?.showHistory()
 
-        showH()
+//        showH()
 
         return root
     }
@@ -53,7 +53,7 @@ class HistorySearchFragment : Fragment() {
     private fun attachObserve() {
         viewModel?.onSuccessShow?.observe(viewLifecycleOwner, Observer { showHistory(it) })
 //        viewModel?.onErrorShow?.observe(viewLifecycleOwner, Observer { showError(it) })
-        viewModel?.isLoading?.observe(viewLifecycleOwner, Observer { showLoading(it) })
+//        viewModel?.isLoading?.observe(viewLifecycleOwner, Observer { showLoading(it) })
 
     }
 
