@@ -33,7 +33,6 @@ class ViewModelOrders : ViewModel() {
                 .setFetchExecutor(exucutor)
                 .build()
 
-
         return  ordersData
     }
 
