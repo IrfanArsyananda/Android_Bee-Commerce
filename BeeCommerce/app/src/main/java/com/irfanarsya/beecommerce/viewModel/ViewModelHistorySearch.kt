@@ -35,14 +35,14 @@ class ViewModelHistorySearch : ViewModel() {
     fun showHistory(){
         isLoading.value = true
 
-        Observable.fromCallable { historyDatabase!!.historyDao().getAllHistory() }
-            .subscribeOn(Schedulers.io())
-            .observeOn(AndroidSchedulers.mainThread())
-            .subscribe({
-                responseHandler(it as MutableList<History>)
-            },{
-                errorHandler(it)
-            })
+//        Observable.fromCallable { historyDatabase!!.historyDao().getAllHistory() }
+//            .subscribeOn(Schedulers.io())
+//            .observeOn(AndroidSchedulers.mainThread())
+//            .subscribe({
+//                responseHandler(it as MutableList<History>)
+//            },{
+//                errorHandler(it)
+//            })
 
 //        repoLocal.showHistory({
 //            onSuccessShow.value = it
