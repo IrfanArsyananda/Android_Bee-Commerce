@@ -15,10 +15,11 @@ class ViewModelOrders : ViewModel() {
 
     var exucutor: Executor = Executors.newFixedThreadPool(5)
 
-//    var ordersFactory: OrdersDataFactory? = null
+    //    var ordersFactory: OrdersDataFactory? = null
 //    var userId: Int = 0
+    var ordersData : LiveData<PagedList<DataItemGO>>? = null
 
-    fun setOrderId(userId: Int) {
+    fun setOrderId(userId: Int):LiveData<PagedList<DataItemGO>> {
 
         var ordersFactory = OrdersDataFactory(userId)
 
@@ -32,10 +33,12 @@ class ViewModelOrders : ViewModel() {
                 .setFetchExecutor(exucutor)
                 .build()
 
+
+        return  ordersData
     }
 
-//    fun getOrders(id: Int): LiveData<PagedList<DataItemGO>> {
-//        setOrderId(id)
+//    fun getOrders(): LiveData<PagedList<DataItemGO>>? {
+//
 //        return ordersData
 //    }
 
@@ -52,11 +55,11 @@ class ViewModelOrders : ViewModel() {
 //                .setInitialLoadSizeHint(10)
 //                .setEnablePlaceholders(false)
 //                .build()
-//
-//        ordersData = LivePagedListBuilder(ordersFactory,pageListConfig)
-//                .setFetchExecutor(exucutor)
-//                .build()
-//    }
+////
+////        ordersData = LivePagedListBuilder(ordersFactory,pageListConfig)
+////                .setFetchExecutor(exucutor)
+////                .build()
+//   }
 
 
 //    fun setID(): Int{

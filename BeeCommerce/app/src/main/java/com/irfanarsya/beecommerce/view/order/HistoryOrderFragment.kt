@@ -10,6 +10,7 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.paging.PagedList
 import com.irfanarsya.beecommerce.R
 import com.irfanarsya.beecommerce.adapter.OrdersAdapter
+import com.irfanarsya.beecommerce.helper.SessionManager
 import com.irfanarsya.beecommerce.model.DataItemGO
 import com.irfanarsya.beecommerce.viewModel.ViewModelOrders
 import kotlinx.android.synthetic.main.fragment_history_order.*
@@ -17,28 +18,31 @@ import kotlinx.android.synthetic.main.fragment_history_order.*
 class HistoryOrderFragment : Fragment() {
 
     private var viewModel: ViewModelOrders? = null
+    private var session : SessionManager? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val root = inflater.inflate(R.layout.fragment_history_order, container, false)
 
+
+        session = context?.let { SessionManager(it) }
         viewModel = ViewModelProviders.of(this).get(ViewModelOrders::class.java)
-        val userId = arguments?.getString("uid")
+        //   val userId = arguments?.getString("uid")
 
         attachObserve()
 //        viewModel?.getOrders(47)
-        viewModel?.setOrderId(47)
+        viewModel?.setOrderId(session?.id?.toInt() ?: 47)?.observe(viewLifecycleOwner, Observer { showOrders(it) })
 //        viewModel?.userId = 47
 
         return root
     }
 
     private fun attachObserve() {
-//        viewModel?.ordersData?.observe(viewLifecycleOwner, Observer { showOrders(it) })
+        //   viewModel?.getOrders()?.observe(viewLifecycleOwner, Observer { showOrders(it) })
 //        viewModel?.setOrderId(47).observe(viewLifecycleOwner, Observer { showOrders(it) })
     }
 
     private fun showOrders(it: PagedList<DataItemGO>?) {
-                val adapter = OrdersAdapter()
+        val adapter = OrdersAdapter()
         adapter.submitList(it)
         listOrders.adapter = adapter
         if (it != null) {
