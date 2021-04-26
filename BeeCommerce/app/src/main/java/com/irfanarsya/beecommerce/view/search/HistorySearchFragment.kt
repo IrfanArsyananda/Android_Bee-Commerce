@@ -52,7 +52,7 @@ class HistorySearchFragment : Fragment() {
 
     private fun attachObserve() {
         viewModel?.onSuccessShow?.observe(viewLifecycleOwner, Observer { showHistory(it) })
-//        viewModel?.onErrorShow?.observe(viewLifecycleOwner, Observer { showError(it) })
+        viewModel?.onErrorShow?.observe(viewLifecycleOwner, Observer { showError(it) })
 //        viewModel?.isLoading?.observe(viewLifecycleOwner, Observer { showLoading(it) })
 
     }

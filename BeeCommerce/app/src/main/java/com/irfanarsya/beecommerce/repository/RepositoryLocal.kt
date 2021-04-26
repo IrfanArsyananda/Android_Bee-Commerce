@@ -34,7 +34,7 @@ class RepositoryLocal {
 //                })
 //    }
 //private val students : ArrayList<Student> = ArrayList()
-    fun showHistory(responseHandler: (MutableList<History>) -> Unit, errorHandler: (Throwable) -> Unit) {
+    fun showHistory(responseHandler: (List<History>) -> Unit, errorHandler: (Throwable) -> Unit) {
         Observable.fromCallable { historyDatabase!!.historyDao().getAllHistory() }
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())

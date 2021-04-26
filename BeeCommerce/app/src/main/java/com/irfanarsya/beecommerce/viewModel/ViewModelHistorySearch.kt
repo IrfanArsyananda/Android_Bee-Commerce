@@ -44,13 +44,13 @@ class ViewModelHistorySearch : ViewModel() {
 //                errorHandler(it)
 //            })
 
-//        repoLocal.showHistory({
-//            onSuccessShow.value = it
-//            isLoading.value = false
-//        },{
-//            onErrorShow.value = it
-//            isLoading.value = false
-//        })
+        repoLocal.showHistory({
+            onSuccessShow.value = it
+            isLoading.value = false
+        },{
+            onErrorShow.value = it
+            isLoading.value = false
+        })
 
     }
 
