@@ -1,1 +1,25 @@
-# Kotlin-Intermediate-Week4-Task5
+# Kotlin-Intermediate-Week4-Task5  
+
+![16 History Orders](https://user-images.githubusercontent.com/71767382/116471809-5092da80-a89f-11eb-8e27-60e63c7be2b4.png)
+![5 Promo](https://user-images.githubusercontent.com/71767382/116471902-686a5e80-a89f-11eb-80fd-8b894c010218.png)
+![6 Kategori](https://user-images.githubusercontent.com/71767382/116471913-6bfde580-a89f-11eb-8a35-3b358a94319b.png)
+![7 Cart](https://user-images.githubusercontent.com/71767382/116471945-75874d80-a89f-11eb-8bf6-bff8a072cb2b.png)
+![8 Profil](https://user-images.githubusercontent.com/71767382/116471951-77511100-a89f-11eb-9996-99a4e15e0746.png)
+![9 Detail](https://user-images.githubusercontent.com/71767382/116471961-791ad480-a89f-11eb-825c-43efac222724.png)
+![10 Add to Cart](https://user-images.githubusercontent.com/71767382/116471971-7c15c500-a89f-11eb-8195-7c21df84a650.png)
+![11 Edit Cart](https://user-images.githubusercontent.com/71767382/116471981-7f10b580-a89f-11eb-96eb-504719c7e48f.png)
+![12 Delete Cart](https://user-images.githubusercontent.com/71767382/116471991-81730f80-a89f-11eb-9f53-fea47bb9f50e.png)
+![14 Edit foto](https://user-images.githubusercontent.com/71767382/116471998-833cd300-a89f-11eb-8191-91265d85b69e.png)
+![15 Edit Profil](https://user-images.githubusercontent.com/71767382/116472002-846e0000-a89f-11eb-8949-c892fbe65268.png)
+
+![17 Shipping](https://user-images.githubusercontent.com/71767382/116471796-4cff5380-a89f-11eb-9e45-715f88f1e031.png)
+![5 Promo](https://user-images.githubusercontent.com/71767382/116471902-686a5e80-a89f-11eb-80fd-8b894c010218.png)
+
+![18 Add Ship](https://user-images.githubusercontent.com/71767382/116471814-525c9e00-a89f-11eb-9d57-e532b0c74b19.png)
+![19 Edit Ship](https://user-images.githubusercontent.com/71767382/116471820-538dcb00-a89f-11eb-8f8e-58f4810e3067.png)
+![20 Search](https://user-images.githubusercontent.com/71767382/116471824-54bef800-a89f-11eb-832f-2695a44d6109.png)
+![21 History Search](https://user-images.githubusercontent.com/71767382/116471857-5d173300-a89f-11eb-807a-c1b3cbaa1a0a.png)
+![1 Splash](https://user-images.githubusercontent.com/71767382/116471861-5e486000-a89f-11eb-8f3f-d15842ecf036.png)
+![2 Login](https://user-images.githubusercontent.com/71767382/116471875-5f798d00-a89f-11eb-8ad7-6df856ea3bac.png)
+![3 Register](https://user-images.githubusercontent.com/71767382/116471879-61435080-a89f-11eb-830c-61e4554ff0bb.png)
+![4 Home](https://user-images.githubusercontent.com/71767382/116471885-62747d80-a89f-11eb-93c9-5679690d88ee.png)
