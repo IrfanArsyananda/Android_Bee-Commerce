@@ -6,13 +6,11 @@ import androidx.lifecycle.ViewModel
 import androidx.paging.LivePagedListBuilder
 import androidx.paging.PagedList
 import com.irfanarsya.beecommerce.dataSource.home.HomeDataFactory
-import com.irfanarsya.beecommerce.dataSource.order.OrdersDataFactory
+import com.irfanarsya.beecommerce.dataSource.homeByKategori.HomeKatDataFactory
 import com.irfanarsya.beecommerce.dataSource.search.SearchDataFactory
 import com.irfanarsya.beecommerce.local.History
 import com.irfanarsya.beecommerce.model.DataItem
-import com.irfanarsya.beecommerce.model.DataItemGO
 import com.irfanarsya.beecommerce.repository.RepositoryLocal
-import java.util.concurrent.Executor
 import java.util.concurrent.Executors
 
 class ViewModelHome: ViewModel(){
@@ -56,6 +54,23 @@ class ViewModelHome: ViewModel(){
                 .build()
 
         return  searchData
+    }
+
+    fun categoryHome(idCat: String):LiveData<PagedList<DataItem>> {
+        var idCatI = idCat.toInt()
+        var catHomeFactory = HomeKatDataFactory(idCatI)
+
+        var pageListConfig = PagedList.Config.Builder()
+                .setPageSize(10)
+                .setInitialLoadSizeHint(10)
+                .setEnablePlaceholders(false)
+                .build()
+
+        var catHomeData : LiveData<PagedList<DataItem>> = LivePagedListBuilder(catHomeFactory,pageListConfig)
+                .setFetchExecutor(exucutor)
+                .build()
+
+        return  catHomeData
     }
 
     val repoLocal = RepositoryLocal()

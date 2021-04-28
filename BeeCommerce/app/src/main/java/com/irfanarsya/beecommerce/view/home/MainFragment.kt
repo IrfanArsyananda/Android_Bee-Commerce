@@ -1,18 +1,15 @@
 package com.irfanarsya.beecommerce.view.home
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.paging.PagedList
 import com.irfanarsya.beecommerce.R
-import com.irfanarsya.beecommerce.adapter.HistoryAdapter
 import com.irfanarsya.beecommerce.adapter.HomeAdapter
 import com.irfanarsya.beecommerce.local.DatabaseHistory
 import com.irfanarsya.beecommerce.local.History
@@ -21,9 +18,7 @@ import com.irfanarsya.beecommerce.viewModel.ViewModelHome
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.schedulers.Schedulers
-import kotlinx.android.synthetic.main.fragment_history_search.*
 import kotlinx.android.synthetic.main.fragment_main.*
-import kotlinx.android.synthetic.main.fragment_main.view.*
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -31,6 +26,7 @@ class MainFragment : Fragment() {
 
     private var viewModel : ViewModelHome? = null
     private var historyDatabase: DatabaseHistory? = null
+    private var cId: String? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -50,13 +46,21 @@ class MainFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        cId = arguments?.getString("cId")
 
         attachObserve()
-        viewModel?.getHomeProduts()
+
+        Toast.makeText(context, cId?:"All Categories", Toast.LENGTH_SHORT).show()
+
+        if (cId != null){
+            viewModel?.categoryHome(cId?:"")?.observe(viewLifecycleOwner, Observer { showHomeProduts(it) })
+        }else{
+            viewModel?.getHomeProduts()
+        }
 
         btnSearch.setOnClickListener {
             val key = etSearch.text.toString()
-//            viewModel?.getSearchProduts()
+
             Toast.makeText(context, key, Toast.LENGTH_SHORT).show()
             viewModel?.searchHome(key)?.observe(viewLifecycleOwner, Observer { showHomeProduts(it) })
             if (key.isNotEmpty()){

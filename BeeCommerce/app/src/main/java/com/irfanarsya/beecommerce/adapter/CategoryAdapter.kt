@@ -8,10 +8,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.irfanarsya.beecommerce.R
 import com.irfanarsya.beecommerce.model.CategoryItem
+import com.irfanarsya.beecommerce.model.DataItemGO
 import com.irfanarsya.beecommerce.network.Constant
 import kotlinx.android.synthetic.main.item_category.view.*
 
-class CategoryAdapter : PagedListAdapter<CategoryItem, RecyclerView.ViewHolder>(CategoryItem().DIFF_CALLBACK) {
+class CategoryAdapter(val itemClick: OnClickListener) : PagedListAdapter<CategoryItem, RecyclerView.ViewHolder>(CategoryItem().DIFF_CALLBACK) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_category, parent, false)
         return HomeHolder(view)
@@ -20,6 +21,9 @@ class CategoryAdapter : PagedListAdapter<CategoryItem, RecyclerView.ViewHolder>(
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         if (holder is HomeHolder) {
             holder.bindTo(getItem(position))
+        }
+        holder.itemView.setOnClickListener {
+            itemClick.detail(getItem(position))
         }
     }
 
@@ -33,6 +37,10 @@ class CategoryAdapter : PagedListAdapter<CategoryItem, RecyclerView.ViewHolder>(
             Glide.with(itemView.context).load(urlEnd).into(itemView.itemImageCategory)
 
         }
+    }
+
+    interface OnClickListener {
+        fun detail(item: CategoryItem?)
     }
 
 }

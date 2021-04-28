@@ -2,7 +2,6 @@ package com.irfanarsya.beecommerce.dataSource.search
 
 import androidx.lifecycle.MutableLiveData
 import androidx.paging.DataSource
-import com.irfanarsya.beecommerce.dataSource.home.HomeDataSource
 import com.irfanarsya.beecommerce.model.DataItem
 
 class SearchDataFactory(var q: String): DataSource.Factory<Long, DataItem>() {

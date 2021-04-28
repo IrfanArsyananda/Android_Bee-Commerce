@@ -36,6 +36,14 @@ interface ApiService {
         @Query("pageSize") pageSize : Int
     ):Flowable<ResponseGetHome>
 
+    //getHomeProductsByCat
+    @GET("get-home-products")
+    fun getHomeProductsByCat(
+        @Query("page") page : Long,
+        @Query("pageSize") pageSize : Int,
+        @Query("category_id") category_id : Int
+    ):Flowable<ResponseGetHome>
+
     //getHomeProductsByKey
     @GET("get-home-products")
     fun getHomeProductsByKey(

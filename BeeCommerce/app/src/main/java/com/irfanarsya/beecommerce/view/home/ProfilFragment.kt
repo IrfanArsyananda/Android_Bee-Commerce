@@ -17,17 +17,22 @@ import androidx.navigation.Navigation
 import com.bumptech.glide.Glide
 import com.irfanarsya.beecommerce.R
 import com.irfanarsya.beecommerce.helper.SessionManager
+import com.irfanarsya.beecommerce.local.DatabaseHistory
 import com.irfanarsya.beecommerce.model.ResponseGetProfile
 import com.irfanarsya.beecommerce.network.Constant
 import com.irfanarsya.beecommerce.view.LoginActivity
 import com.irfanarsya.beecommerce.view.editProfil.EditFotoActivity
 import com.irfanarsya.beecommerce.viewModel.ViewModelProfile
+import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
+import io.reactivex.rxjava3.core.Observable
+import io.reactivex.rxjava3.schedulers.Schedulers
 import kotlinx.android.synthetic.main.fragment_profil.*
 
 class ProfilFragment : Fragment() {
 
     lateinit var navController: NavController
     private var viewModel : ViewModelProfile? = null
+    private var historyDatabase: DatabaseHistory? = null
     private var userId : String? = null
     private var email : String? = null
     private var fName : String? = null
@@ -110,6 +115,7 @@ class ProfilFragment : Fragment() {
                 setMessage("Apakah anda yakin?")
                 setPositiveButton("Ya") { dialog, which ->
                     confirmOut()
+                    confirmDelRoom()
                     dialog.dismiss()
                 }
                 setNegativeButton("Batal") { dialog, which ->
@@ -118,6 +124,19 @@ class ProfilFragment : Fragment() {
             }.show()
         }
 
+    }
+
+    private fun confirmDelRoom() {
+//        fun deleteNote(item: Notes?){
+//        Observable.fromCallable { historyDatabase!!.historyDao().deleteAllHistory() }
+//            .subscribeOn(Schedulers.io())
+//            .observeOn(AndroidSchedulers.mainThread())
+//            .subscribe({
+//
+//            },{
+//                Toast.makeText(context, it?.message, Toast.LENGTH_SHORT).show()
+//            })
+//    }
     }
 
     private fun confirmOut() {

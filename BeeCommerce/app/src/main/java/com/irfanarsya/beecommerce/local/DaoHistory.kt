@@ -11,6 +11,9 @@ interface DaoHistory {
     @Query("SELECT * FROM history ORDER BY id DESC")
     fun getAllHistory(): List<History>
 
+    @Query("DELETE FROM history")
+    fun deleteAllHistory()
+
     @Insert
     fun insertHistory(history: History)
 

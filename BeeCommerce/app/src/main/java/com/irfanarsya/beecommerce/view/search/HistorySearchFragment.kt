@@ -31,9 +31,9 @@ class HistorySearchFragment : Fragment() {
         historyDatabase = context?.let { DatabaseHistory.getInstance(it) }
 
         attachObserve()
-        viewModel?.showHistory()
+//        viewModel?.showHistory()
 
-//        showH()
+        showH()
 
         return root
     }
