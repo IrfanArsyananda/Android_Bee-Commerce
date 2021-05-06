@@ -1,6 +1,14 @@
 # Kotlin-Intermediate-Week4-Task5  
 
-# Bee Commerce - MVVM
+# Bee Commerce - MVVM  
+Implementasi :
+- MVVM Pattern
+- RXJava
+- Navigation Jetpack
+- Paging 2 Jetpack
+- Session User
+- Database ROOM
+
 Fitur Aplikasi :
 - Splash Screen
 - Register + Login
