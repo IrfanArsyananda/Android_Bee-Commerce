@@ -1,6 +1,22 @@
 # Kotlin-Intermediate-Week4-Task5  
 
 # Bee Commerce - MVVM
+Fitur Aplikasi :
+- Splash Screen
+- Register + Login
+- Get Home Product + Search
+- Get Promotion Product
+- Get Category Products + Show Product by Category
+- Get Product by ID (Detail Product)
+- Show Profile User + Update
+- Upload Photo Profile + Edit
+- Add Shipping Address+ Update
+- CRUD Product Cart
+- Get Cart (by user_id)
+- Checkout (add order)
+- History Orders (get order)
+
+*API private disediakan udacoding.com  
 
 Hasil UI :  
 <table border="1">
